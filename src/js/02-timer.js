@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import { Notify } from "notiflix";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const dataInput = document.querySelector("#datetime-picker");
 const dataStartBtn = document.querySelector("[data-start]");
@@ -11,7 +11,9 @@ const dataSeconds = document.querySelector("[data-seconds]");
 let itervalId = null;
 let timerId = null;
 let formateDate = null;
+
 dataStartBtn.disabled = true;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -28,10 +30,13 @@ const options = {
 flatpickr(dataInput, options);
 dataStartBtn.disabled = true;
 dataStartBtn.addEventListener("click", onStartTimer);
+
 function onStartTimer() {
-  getTimer();
- dataStartBtn.disabled = true;
+getTimer();
+  dataStartBtn.disabled = true;
+  dataInput.disabled = true;
 }
+
 function getTimer() {
   itervalId = setInterval(() => {
     formateDate = timerId - new Date();

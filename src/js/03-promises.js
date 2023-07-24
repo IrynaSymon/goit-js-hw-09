@@ -1,4 +1,5 @@
 import { Notify } from "notiflix";
+
 const formEl = document.querySelector(".form");
 formEl.addEventListener("submit", onPromiseCreate);
 function onPromiseCreate(evt) {
@@ -17,6 +18,7 @@ function onPromiseCreate(evt) {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
     inputDelay += inputStep;
+    formEl.reset();
   }
 }
 

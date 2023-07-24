@@ -17,8 +17,7 @@ img {
   max-width: 100%;
 }
 button {
-  background-color: green;
-  color: wheat;
+  font-size: 16px;
   border-radius: 10px;
   border: none;
   padding: 15px;
